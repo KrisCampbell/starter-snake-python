@@ -12,16 +12,16 @@ def think(data,possible_moves):
 		return 'right'
 
 	headCopy['x'] -= 2
-	elif headCopy not in me and headCopy['x'] >= 0:
+	if headCopy not in me and headCopy['x'] >= 0:
 		return 'left'
 
 	headCopy['x'] += 1
 	headCopy['y'] += 1
-	elif headCopy not in me and headCopy['y'] < 11:
+	if headCopy not in me and headCopy['y'] < 11:
 		return 'up'
 
 	headCopy['y'] -= 2
-	elif headCopy not in me and headCopy['y'] >= 0:
+	if headCopy not in me and headCopy['y'] >= 0:
 		return 'down'
 
 	return 'up'
