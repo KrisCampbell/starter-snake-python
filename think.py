@@ -50,11 +50,15 @@ def think(data,possible_moves):
 	upCheck = checknb(snakes,uppos,me)
 	downCheck = checknb(snakes,downpos,me)
 	maxCheck = max(leftCheck,rightCheck,upCheck,downCheck)
+	options = []
 	if(maxCheck == leftCheck):
-		return 'left'
+		options += 'left'
 	elif(maxCheck == upCheck):
-		return 'up'
+		options += 'up'
 	elif(maxCheck == rightCheck):
-		return 'right'
+		options += 'right'
 	elif(maxCheck == downCheck):
-		return 'down'
+		options += 'down'
+
+	choice = random.choice(options)
+	return choice
