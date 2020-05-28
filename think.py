@@ -2,10 +2,11 @@ import json
 import random
 
 def checknb(snakes,position):
-	leftpos = position.copy()['x'] -= 1
-	rightpos = position.copy()['x'] += 1
-	uppos = position.copy()['y'] += 1
-	downpos = position.copy()['y'] -= 1
+	poscop = position.copy()
+	leftpos = poscop['x'] -= 1
+	rightpos = poscop['x'] += 1
+	uppos = poscop['y'] += 1
+	downpos = poscop['y'] -= 1
 	neighborsOpen = 4
 	for snake in snakes:
 		if leftpos in snake['body']:
