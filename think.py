@@ -12,13 +12,17 @@ def checknb(snakes,position):
 	downpos['y'] -= 1
 	neighborsOpen = 4
 	for snake in snakes:
-		if leftpos in snake['body']: return 0 elif: leftpos['x'] < 0:
+		if leftpos in snake['body']: return 0 
+		elif: leftpos['x'] < 0:
 			neighborsOpen -= 1
-		if rightpos in snake['body']: return 0 elif: rightpos['x'] > 10:
+		if rightpos in snake['body']: return 0 
+		elif: rightpos['x'] > 10:
 			neighborsOpen -= 1
-		if uppos in snake['body']: return 0 elif: uppos['y'] > 10:
+		if uppos in snake['body']: return 0 
+		elif: uppos['y'] > 10:
 			neighborsOpen -= 1
-		if downpos in snake['body']: return 0 elif: downpos['y'] < 0:
+		if downpos in snake['body']: return 0 
+		elif: downpos['y'] < 0:
 			neighborsOpen -= 1
 
 	return neighborsOpen
