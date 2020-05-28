@@ -6,9 +6,10 @@ def think(data,possible_moves):
 
 	me = data['you']['body']
 	myHead = data['you']['head']
+	myID = data['you']['id']
 	opponent = data['snakes']
 	for snake in opponent:
-		if snake['id'] == 'gs_hcTjRDfFPjtD4Qxmg3TYtxDK':
+		if snake['id'] == myID:
 			opponent.remove(snake)
 	opponent = opponent[0]
 	oppBody = opponent['body']
