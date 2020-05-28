@@ -1,6 +1,5 @@
 import os
-import random
-
+import think as th
 import cherrypy
 
 """
@@ -11,7 +10,6 @@ For instructions see https://github.com/BattlesnakeOfficial/starter-snake-python
 class Battlesnake(object):
     @cherrypy.expose
     @cherrypy.tools.json_out()
-    lastMove = "None"
 
     def index(self):
         # This function is called when you register your Battlesnake on play.battlesnake.com
@@ -49,10 +47,9 @@ class Battlesnake(object):
 
         # Choose a random direction to move in
         possible_moves = ["up", "down", "left", "right"]
-        move = random.choice(possible_moves.copy().remove(lastMove))
+        move = th.think(data,possible_moves)
 
         print(f"MOVE: {move}")
-        lastMove = move
         return {"move": move}
 
     @cherrypy.expose
