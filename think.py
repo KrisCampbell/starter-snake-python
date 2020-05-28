@@ -7,7 +7,7 @@ def think(data,possible_moves):
 	me = data['you']['body']
 	myHead = data['you']['head']
 	myID = data['you']['id']
-	opponent = data['snakes']
+	opponent = data['board']['snakes']
 	for snake in opponent:
 		if snake['id'] == myID:
 			opponent.remove(snake)
