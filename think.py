@@ -52,13 +52,13 @@ def think(data,possible_moves):
 	maxCheck = max(leftCheck,rightCheck,upCheck,downCheck)
 	options = []
 	if(maxCheck == leftCheck):
-		options += 'left'
+		options.append('left')
 	if(maxCheck == upCheck):
-		options += 'up'
+		options.append('up')
 	if(maxCheck == rightCheck):
-		options += 'right'
+		options.append('right')
 	if(maxCheck == downCheck):
-		options += 'down'
+		options.append('down')
 
 	choice = random.choice(options)
 	return choice
