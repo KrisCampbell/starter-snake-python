@@ -8,7 +8,7 @@ def think(data,possibleMoves):
 		lastMove = data['move']
 
 	if lastMove == "None":
-		pass()
+		pass
 	elif lastMove == "Up":
 		lastMove = "Down"
 	elif lastMove == "Down":
