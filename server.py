@@ -18,10 +18,10 @@ class Battlesnake(object):
         # TIP: If you open your Battlesnake URL in browser you should see this data
         return {
             "apiversion": "1",
-            "author": "",  # TODO: Your Battlesnake Username
-            "color": "#888888",  # TODO: Personalize
-            "head": "default",  # TODO: Personalize
-            "tail": "default",  # TODO: Personalize
+            "author": "KrisCampbell",  # TODO: Your Battlesnake Username
+            "color": "#CC0C3C",  # TODO: Personalize
+            "head": "evil",  # TODO: Personalize
+            "tail": "curled",  # TODO: Personalize
         }
 
     @cherrypy.expose
@@ -31,6 +31,7 @@ class Battlesnake(object):
         # cherrypy.request.json contains information about the game that's about to be played.
         # TODO: Use this function to decide how your snake is going to look on the board.
         data = cherrypy.request.json
+        print(f"START Data: {data}")
 
         print("START")
         return "ok"
@@ -43,6 +44,7 @@ class Battlesnake(object):
         # Valid moves are "up", "down", "left", or "right".
         # TODO: Use the information in cherrypy.request.json to decide your next move.
         data = cherrypy.request.json
+        print(f"MOVE Data: {data}")
 
         # Choose a random direction to move in
         possible_moves = ["up", "down", "left", "right"]
@@ -57,6 +59,7 @@ class Battlesnake(object):
         # This function is called when a game your snake was in ends.
         # It's purely for informational purposes, you don't have to make any decisions here.
         data = cherrypy.request.json
+        print(f"END Data: {data}")
 
         print("END")
         return "ok"
