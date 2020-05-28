@@ -1,7 +1,7 @@
 import json
 import random
 
-def checknb(snakes,position):
+def checknb(snakes,position,you):
 	leftpos = position.copy()
 	rightpos = position.copy()
 	uppos = position.copy()
@@ -12,19 +12,19 @@ def checknb(snakes,position):
 	downpos['y'] -= 1
 	neighborsOpen = 4
 	for snake in snakes:
-		if leftpos in snake['body']: 
+		if leftpos in snake['body'] or leftpos in you: 
 			return 0 
 		elif leftpos['x'] < 0:
 			neighborsOpen -= 1
-		if rightpos in snake['body']: 
+		if rightpos in snake['body'] or rightpos in you: 
 			return 0 
 		elif rightpos['x'] > 10:
 			neighborsOpen -= 1
-		if uppos in snake['body']: 
+		if uppos in snake['body'] or uppos in you: 
 			return 0 
 		elif uppos['y'] > 10:
 			neighborsOpen -= 1
-		if downpos in snake['body']: 
+		if downpos in snake['body'] or downpos in you: 
 			return 0 
 		elif downpos['y'] < 0:
 			neighborsOpen -= 1
@@ -51,10 +51,10 @@ def think(data,possible_moves):
 	rightpos['x'] += 1
 	uppos['y'] += 1
 	downpos['y'] -= 1
-	leftCheck = checknb(snakes,leftpos)
-	rightCheck = checknb(snakes,rightpos)
-	upCheck = checknb(snakes,uppos)
-	downCheck = checknb(snakes,downpos)
+	leftCheck = checknb(snakes,leftpos,me)
+	rightCheck = checknb(snakes,rightpos,me)
+	upCheck = checknb(snakes,uppos,me)
+	downCheck = checknb(snakes,downpos,me)
 	maxCheck = max(leftCheck,rightCheck,upCheck,downCheck)
 	if(maxCheck == leftCheck):
 		return 'left'
