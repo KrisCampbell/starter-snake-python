@@ -8,10 +8,11 @@ This is a simple Battlesnake server written in Python.
 For instructions see https://github.com/BattlesnakeOfficial/starter-snake-python/README.md
 """
 
-
 class Battlesnake(object):
     @cherrypy.expose
     @cherrypy.tools.json_out()
+    lastMove = "None"
+
     def index(self):
         # This function is called when you register your Battlesnake on play.battlesnake.com
         # It controls your Battlesnake appearance and author permissions.
@@ -48,9 +49,10 @@ class Battlesnake(object):
 
         # Choose a random direction to move in
         possible_moves = ["up", "down", "left", "right"]
-        move = random.choice(possible_moves)
+        move = random.choice(possible_moves.copy().remove(lastMove))
 
         print(f"MOVE: {move}")
+        lastMove = move
         return {"move": move}
 
     @cherrypy.expose
