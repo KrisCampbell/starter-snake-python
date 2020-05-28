@@ -53,11 +53,11 @@ def think(data,possible_moves):
 	options = []
 	if(maxCheck == leftCheck):
 		options += 'left'
-	elif(maxCheck == upCheck):
+	if(maxCheck == upCheck):
 		options += 'up'
-	elif(maxCheck == rightCheck):
+	if(maxCheck == rightCheck):
 		options += 'right'
-	elif(maxCheck == downCheck):
+	if(maxCheck == downCheck):
 		options += 'down'
 
 	choice = random.choice(options)
