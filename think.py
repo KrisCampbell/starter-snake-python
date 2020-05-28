@@ -34,10 +34,10 @@ def think(data,possible_moves):
 		down = True
 
 	options = []
-	if left: options.add("left")
-	if right: options.add("right")
-	if up: options.add("up")
-	if down: options.add("down")
+	if left: options.append("left")
+	if right: options.append("right")
+	if up: options.append("up")
+	if down: options.append("down")
 	choice = random.choice(options)
 
 	return choice
