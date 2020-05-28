@@ -35,15 +35,18 @@ def think(data,possible_moves):
 			opponent.remove(snake)
 	opponent = opponent[0]
 	oppBody = opponent['body']
-	headCopy = myHead.copy()
-	leftpos = headCopy.copy()['x'] -= 1
-	rightpos = headCopy.copy()['x'] += 1
-	uppos = headCopy.copy()['y'] += 1
-	downpos = headCopy.copy()['y'] -= 1
+	leftpos = myHead.copy()
+	rightpos = myHead.copy()
+	uppos = myHead.copy()
+	downpos = myHead.copy()
+	leftpos['x'] -= 1
+	rightpos['x'] += 1
+	uppos['y'] += 1
+	downpos['y'] -= 1
 	leftCheck = checknb(snakes,leftpos)
 	rightCheck = checknb(snakes,rightpos)
-	upCheck = checknb(snakes,up)
-	downCheck = checknb(snakes,down)
+	upCheck = checknb(snakes,uppos)
+	downCheck = checknb(snakes,downpos)
 	maxCheck = max(leftCheck,rightCheck,upCheck,downCheck)
 	if(maxCheck == leftCheck):
 		return 'left'
