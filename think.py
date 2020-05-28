@@ -1,8 +1,8 @@
 import json
 import random
 
-def think(data):
-	choice = random.choice(data)
+def think(data,possible_moves):
+	choice = random.choice(possible_moves)
 	print(data)
 	# me = data['snakes']['you']['body']
 	# myHead = data['snakes']['you']['head']
