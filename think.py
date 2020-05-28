@@ -9,14 +9,14 @@ def think(data,possibleMoves):
 
 	if lastMove == "None":
 		pass
-	elif lastMove == "Up":
-		lastMove = "Down"
-	elif lastMove == "Down":
-		lastMove == "Up"
-	elif lastMove == "Left":
-		lastMove = "Right"
-	elif lastMove == "Right":
-		lastMove == "Left"
+	elif lastMove == "up":
+		lastMove = "down"
+	elif lastMove == "down":
+		lastMove == "up"
+	elif lastMove == "left":
+		lastMove = "right"
+	elif lastMove == "right":
+		lastMove == "left"
 	copy = possibleMoves.copy()
 	if lastMove in copy: copy.remove(lastMove)
 	choice = random.choice(copy)
