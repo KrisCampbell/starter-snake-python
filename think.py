@@ -7,5 +7,7 @@ def think(data,possibleMoves):
 		data = json.load(json_file)
 		lastMove = data['move']
 
-	choice = random.choice(possibleMoves.remove(lastMove))
+	copy = possibleMoves.copy()
+	if lastMove in copy: copy.remove(lastMove)
+	choice = random.choice(copy)
 	return choice
